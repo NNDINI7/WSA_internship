@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para"></p>
+        
+    <script> //synchronous code
+            const p = document.querySelector(".para");
+            p.textContent="my name is nandini";
+            alert("text set !");
+            p.style.color="red"; 
+
+            //asynchronous
+            const p = document.querySelector(".para");
+        
+            setTimeout(function(){
+               console.log("welcome");
+            },5000);
+            p.textContent = "my name is shree";
+            p.style.color="red";
+
+            const request =  fetch("https://www.w3schools.com/js/js_json_intro.asp")
+            .then(function(response){
+                console.log(response);
+                return response.json();
+
+            })
+            .then(function(data){
+                console.log(data);
+            });
+            console.log(request);
+        </script>
+</body>
+</html>
